@@ -36,11 +36,11 @@ docker-compose run --entrypoint sh fly
 Since the flyrc persists credentials, you can repeatedly run the service as many times as you want without logging into the shell. I've provided an example command to login to the web-api via docker-compose.
 
 ```sh
-docker-compose run fly -t main -c http://web:8080 -u concourse -changeme
+docker-compose run fly login -t main -k -c http://web:8080 -u concourse -p changeme
 ```
 
 ## Turn-up
-Turn-up can be accomplished simply by running: 
+Turn-up can be accomplished simply by running:
 
 ```
 docker-compose up
@@ -51,7 +51,7 @@ docker-compose up
 1. Invoke the fly service.
 
 ```
-docker-compose run fly -t main -c http://web:8080 -u concourse -changeme
+docker-compose run fly login -t main -k -c http://web:8080 -u concourse -p changeme
 ```
 2. verify that you can access run authenticated tasks.
 
